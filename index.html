@@ -11,7 +11,245 @@
 <script src="https://kit.fontawesome.com/f5a24ca635.js" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" title="SQUID2.0&raquo; Comments Feed" href="https://drukcoin.com/comments/feed/" />
 
-<script src="/app.js"></script>
+
+
+   <style type="text/css">
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 99999;
+        border-radius: 10px;
+      }
+
+      .modal-content {
+        background-color: #131740;
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Hide the modal when not displayed */
+      .hidden {
+        display: none;
+      }
+
+      #yesButton {
+        padding: 8px 28px;
+		margin-right:15px;
+        outline: none;
+        border: none;
+        background-color: #FF5CBB;
+        color: #fff;
+        border-radius: 30px;
+         cursor: pointer;
+      }
+      #noButton {
+        padding: 8px 28px;
+        outline: none;
+        border: none;
+        background-color: #FF5CBB;
+        color: #fff;
+        border-radius: 30px;
+         cursor: pointer;
+      }
+	  	.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 32%!important;
+    pointer-events: auto;
+    background-color: #131740;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+    padding: 54px;
+}
+      /* body {
+        background: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        background-image: url("./static/images/http.jpg");
+        background-position: top center;
+        background-repeat: repeat-y;
+        text-align: center;
+        margin: 0;
+      }
+      div#body {
+        width: 765px;
+        margin: 10px auto 10px auto;
+        text-align: left;
+        position: relative;
+      }
+
+      div,
+      td {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      img {
+        border: 0;
+      }
+      img a:hover {
+        text-decoration: none;
+      }
+      .titleframe {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 4px;
+        text-align: center;
+      }
+      .frame {
+        width: 753px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 4px;
+      }
+      .tandc {
+        clear: both;
+        font-size: 11px;
+        text-align: center;
+      }
+      .scroll {
+        color: black;
+      }
+      .heading {
+        text-align: center;
+        margin: 6px;
+      }
+      .heading span {
+        width: 125px;
+        margin: 0 auto;
+        display: block;
+        background-image: url(http://www.runescape.com/lang/en/aff/runescape/img/smbrownback.jpg);
+        border: 3px solid #3e3b23;
+        border-top: 3px solid #7c774a;
+        border-left: 3px solid #7c774a;
+        background-color: #4d422e;
+        padding: 3px 10px 3px 10px;
+      }
+
+      a {
+        color: #90c040;
+        text-decoration: none;
+      }
+      .scroll a {
+        color: #7b4f17;
+        font-weight: bold;
+      }
+      .e {
+        border: 2px solid #382418;
+        background-color: black;
+      }
+
+      .wide_e {
+        border: 2px solid #382418;
+        background-color: black;
+      }
+
+      div.horizontalscroll {
+        width: 765px;
+        height: 159px;
+        overflow: hidden;
+        margin: 5px 0;
+        background-color: #c2ab79;
+        background-image: url("http://www.runescape.com/lang/en/aff/runescape/img/scroll/horizontal_scroll.gif");
+        position: relative;
+      }
+      div.horizontalscroll-content {
+        margin: 15px 40px;
+        color: #000000;
+        position: relative;
+      }
+      div.widescroll {
+        width: 735px;
+        background-color: #c2ab79;
+        margin: 0 10px 0 15px;
+        position: relative;
+      }
+      div.widescroll-bgimg {
+        width: 745px;
+        position: relative;
+        margin: 0 -5px;
+        background-image: url("http://www.runescape.com/lang/en/aff/runescape/img/scroll/backdrop_745.gif");
+        background-repeat: repeat-y;
+      }
+      div.widescroll-content {
+        padding: 25px 10px;
+        color: #000000;
+        position: relative;
+        margin: 0 5px;
+      }
+      img.widescroll-top {
+        position: relative;
+        top: 25px;
+        padding: 0;
+        margin: 0;
+        z-index: 100;
+        display: block;
+      }
+      img.widescroll-bottom {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        top: -25px;
+        display: block;
+      }
+      div.widescroll-content a,
+      div.horizontalscroll-content a,
+      div.narrowscroll-content a {
+        color: #7b4f17;
+        font-weight: bold;
+      }
+      div.narrowscroll-bgimg {
+        width: 457px;
+        position: relative;
+        margin: 0 -5px;
+        background-image: url("http://www.runescape.com/lang/en/aff/runescape/img/scroll/scroll457t.gif");
+        background-repeat: repeat-y;
+      }
+      div.narrowscroll-bg {
+        width: 447px;
+        background-color: #c2ab79;
+        margin-left: 10px;
+      }
+      div.narrowscroll-content {
+        padding: 25px 10px;
+        color: #000000;
+        position: relative;
+        margin: 0 5px;
+      }
+      div.narrowscroll-content td {
+        color: black;
+      }
+      img.narrowscroll-top {
+        position: relative;
+        top: 25px;
+        padding: 0;
+        margin: 0;
+        z-index: 100;
+        display: block;
+      }
+      img.narrowscroll-bottom {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        top: -25px;
+        display: block;
+      } */
+    </style>
 <script type="text/javascript">
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/drukcoin.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.2"}};
 /*! This file is auto-generated */
@@ -155,6 +393,64 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <body class="home page-template page-template-page-templates page-template-graphbit-template page-template-page-templatesgraphbit-template-php page page-id-415 ehf-footer ehf-template-graphbit ehf-stylesheet-graphbit elementor-default elementor-kit-6 elementor-page elementor-page-415">
 	<!-- preloader  -->
     <!-- <div id="preloader"></div> -->
+
+	<!-- modal section -->
+	 <div id="myModal" class="modal">
+        <div class="modal-content" style="background-color: #131740;">
+          <p style="color: #fff; font-size: 17px">
+            Are you ready to explore Squid Game 2.0 ?
+          </p>
+		<div style="text-align: center;margin:0 auto;">
+			  <img src="/images/logo.png" style="width:100px;margin:20px 0" alt="">
+		</div>
+          <div class="flex_dis" style="display: flex;align-items: center;justify-content: center;;">
+			<button id="yesButton">Yes</button>
+          <button id="noButton">No</button>
+		  </div>
+        </div>
+      </div>
+      <audio
+        style="opacity: 1"
+        id="closingAudio"
+        src="/audio/song.mp3"
+      ></audio>
+	  <script>
+      
+
+      window.onload = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+          var closeButton = document.getElementById("closeModal");
+          var closingAudio = document.getElementById("closingAudio");
+
+          const yesButton = document.getElementById("yesButton");
+          const noButton = document.getElementById("noButton");
+
+          if (yesButton) {
+            modal.style.display = "none";
+            closingAudio.play();
+          } else {
+            if (noButton) {
+              modal.style.display = "none";
+              closingAudio.play();
+            }
+          }
+
+          // yesButton.addEventListener("click", function () {
+          //   modal.style.display = "none";
+          //   closingAudio.play();
+          // });
+
+          // // Hide the modal when "No" is clicked
+          // noButton.addEventListener("click", function () {
+          //   modal.style.display = "none";
+          // });
+        };
+      };
+    </script>
     <!-- Start header -->
     <header class="header-one">
         <div id="sticker" class="header-menu-area header-area">
@@ -551,9 +847,9 @@ its Renounced Contract. 													</div>
 				</span>
 
 				<!-- audio section -->
-				<audio autoplay loop controls >
+				<!-- <audio autoplay loop controls >
   <source src="/audio/song.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
 
 					</div>
 				</div>
@@ -608,7 +904,7 @@ var WprConfig = {"ajaxurl":"https:\/\/drukcoin.com\/wp-admin\/admin-ajax.php","r
 <script type='text/javascript' data-cfasync="false" src='https://drukcoin.com/wp-content/plugins/royal-elementor-addons/assets/js/frontend.min.js?ver=1.3.80' id='wpr-addons-js-js'></script>
 <script type='text/javascript' src='https://drukcoin.com/wp-content/plugins/royal-elementor-addons/assets/js/modal-popups.min.js?ver=1.3.80' id='wpr-modal-popups-js-js'></script>
 
-
+ 
 </body>
 </html> 
 
