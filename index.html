@@ -547,6 +547,12 @@ its Renounced Contract. 													</div>
 						<span class="elementor-screen-only">Envelope</span>
 						<i class="fas fa-envelope"></i>					</a>
 				</span>
+
+				<!-- audio section -->
+				<audio autoplay loop controls>
+  <source src="/audio/song.mp3" type="audio/mpeg">
+</audio>
+
 					</div>
 				</div>
 				</div>
@@ -599,6 +605,13 @@ var WprConfig = {"ajaxurl":"https:\/\/drukcoin.com\/wp-admin\/admin-ajax.php","r
 </script>
 <script type='text/javascript' data-cfasync="false" src='https://drukcoin.com/wp-content/plugins/royal-elementor-addons/assets/js/frontend.min.js?ver=1.3.80' id='wpr-addons-js-js'></script>
 <script type='text/javascript' src='https://drukcoin.com/wp-content/plugins/royal-elementor-addons/assets/js/modal-popups.min.js?ver=1.3.80' id='wpr-modal-popups-js-js'></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+  var audio = new Audio('/audio/song.mp3');
+  audio.play();
+});
+</script>
 </body>
 </html> 
 
